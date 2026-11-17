@@ -1,0 +1,87 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les tables de multiplication · Feuille 1 · Mathéroute</title><link rel="icon" href="../../images/favicon.svg" type="image/svg+xml"><style>
+*{box-sizing:border-box}body{margin:0;background:#e1f3f4;font-family:"Atkinson Hyperlegible",Arial,sans-serif;color:#17323a;counter-reset:sec}
+.outils{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:12px}
+.outils a,.outils button{font:700 16px Arial,sans-serif;border:0;border-radius:14px;padding:10px 16px;background:#0b7480;color:#fff;text-decoration:none;cursor:pointer}
+.outils .second{background:#fff;color:#0b7480;border:2px solid #0b7480}.outils .ici{background:#f2c94c;color:#3b2a00}
+.feuille{background:#fff;width:210mm;min-height:297mm;margin:0 auto 30px;padding:10mm 12mm;box-shadow:0 8px 30px #0b748033}
+.entete{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0b7480;padding-bottom:5px;font-size:14px;color:#0b7480;font-weight:700}
+.entete .nom{color:#17323a;font-weight:400}
+h1{font-size:22px;margin:6px 0 2px;color:#0d5d6e}.sous-titre{margin:0 0 4px;font-size:14px;color:#3d6a72;font-weight:700}
+.rappel{background:#e1f3f4;border-left:6px solid #0b7480;border-radius:10px;padding:6px 12px;font-size:13.5px;line-height:1.4;margin:4px 0 4px}
+.sec{counter-increment:sec;break-inside:avoid}
+h2{font-size:15.5px;margin:9px 0 5px;color:#0d5d6e}
+h2 .num::before{content:counter(sec)}
+h2 .num{display:inline-block;background:#0b7480;color:#fff;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px;margin-right:6px;font-size:14px}
+.grille{display:grid;gap:3mm 5mm;align-items:start}.g1{grid-template-columns:1fr}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+.comp .it,.choix .it{font-size:17px;line-height:2.1}.comp.grand .it{font-size:20px}
+.case{display:inline-flex;align-items:center;justify-content:center;min-width:12mm;height:9mm;border:2px solid #9cc7cc;border-radius:6px;margin:0 2px;vertical-align:middle;line-height:1;font-weight:700}
+.case.large{min-width:20mm}.case.petite{min-width:8mm;height:7mm;margin:1px 0}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-weight:700}
+.fr>span:first-child{border-bottom:2px solid currentColor;padding:0 3px}
+.case .fr{font-size:15px}
+.opts{white-space:nowrap}.o{display:inline-block;border:2px solid transparent;border-radius:999px;padding:0 8px;margin:0 3px;font-weight:700}
+.cartes .carte{border:2px solid #cfe6e8;border-radius:12px;padding:5px;text-align:center;font-size:16px}
+.carte .dessin{min-height:16mm;display:flex;align-items:center;justify-content:center;margin-bottom:3px}.carte .dessin svg{max-width:100%;height:auto}
+.carte .leg{line-height:2}
+.op{display:inline-flex;flex-direction:column;align-items:flex-end;margin:0 auto}
+.rang{display:flex}.cel{width:8.6mm;height:8.6mm;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;position:relative}
+.tete .cel{height:5.5mm;font-size:12px;color:#0b7480}.reg .cel{height:7mm}
+.cel.petit{width:6mm;height:6mm;margin:0 1.3mm;border:1.5px dashed #9cc7cc;border-radius:4px;font-size:13px}
+.cel.signe{width:7mm}.res{border-top:3px solid #17323a;padding-top:1.5mm}
+.cel.case{border:2px solid #9cc7cc;border-radius:5px;margin:0 .4mm;width:7.8mm;min-width:0;height:8.6mm}
+.pb{border:2px solid #cfe6e8;border-radius:12px;padding:6px 10px;font-size:15px}.pb p{margin:0 0 3px}.pb .lab{font-size:13px;color:#3d6a72;font-weight:700;margin-top:4px}
+.ligne{border-bottom:2px solid #17323a;min-height:8mm;display:flex;align-items:flex-end;justify-content:center;font-size:16px;margin-bottom:2px}
+.ordre{display:flex;flex-direction:column;gap:2px;font-size:17px;border:2px solid #cfe6e8;border-radius:12px;padding:5px 10px}.ordre .liste{font-weight:700;font-size:19px}.ordre .sens{font-size:13px;color:#3d6a72}
+.err{border:2px dashed #cfe6e8;border-radius:12px;padding:6px 10px;font-size:14.5px}.err p{margin:0 0 4px}.err .calc{font-size:19px;font-weight:700}
+.tab{border-collapse:collapse;margin:0 auto;font-size:17px}.tab th,.tab td{border:2px solid #9cc7cc;padding:4px 10px;text-align:center;min-width:14mm}.tab th{background:#e1f3f4;color:#0d5d6e}.tab td .case{border:0;margin:0}
+.g100{border-collapse:collapse;margin:0 auto}.g100 td{border:1.5px solid #9cc7cc;width:9.5mm;height:8mm;text-align:center;font-weight:700;font-size:15px}.g100 td.vide{background:#fffbe9}
+.libre{font-size:16px}
+.serre h2{margin:5px 0 3px}.serre .grille{gap:1.5mm 5mm}.serre .rappel{padding:4px 10px}.serre .pied{margin-top:4px}
+.r{display:none;color:#c0392b;font-weight:800}
+.rs{display:none}.rf{fill:#fff}
+body.cor .r{display:inline}body.cor .rs{display:inline}body.cor .rf{fill:#f4a6a0}
+body.cor .o.ok{border-color:#c0392b;color:#c0392b}
+body.cor .barre::after{content:"";position:absolute;left:18%;right:18%;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-30deg)}
+.tampon{display:none;color:#c0392b;border:3px solid #c0392b;border-radius:10px;padding:1px 10px;font-size:15px}
+body.cor .tampon{display:inline-block}body.cor .entete .nom{display:none}body.cor .pied{display:none}
+.pied{margin-top:8px;font-size:12px;color:#5b7a80;text-align:center}
+
+/* adapted sheets (TSA): fewer items, bigger, a visual plan and a worked example per task */
+.feuille.tsa{padding:8mm 11mm}.tsa .sous-titre{display:none}.tsa h1{font-size:26px;margin:4px 0 0}.tsa .entete{padding-bottom:3px}
+.plan{display:flex;gap:8px;margin:8px 0 2px;flex-wrap:wrap}.plan span{flex:1;border:3px solid #0b7480;border-radius:14px;padding:4px 10px;font-size:16px;font-weight:700;color:#0d5d6e;display:flex;gap:8px;align-items:center}
+.plan i{font-style:normal;display:inline-block;width:22px;height:22px;border:3px solid #0b7480;border-radius:6px;flex:none}
+.tsa .rappel{font-size:16px;padding:5px 12px}
+.tsa .sec{border:3px solid #cfe6e8;border-radius:18px;padding:2px 14px 8px;margin-top:8px}
+.tsa h2{font-size:21px;margin:6px 0 6px}.tsa h2 .num{width:30px;height:30px;line-height:30px;font-size:17px}
+.exemple{display:flex;align-items:center;gap:12px;background:#f4f8f8;border:2px dashed #9cc7cc;border-radius:12px;padding:3px 12px;margin:0 0 6px;font-size:19px;color:#3d6a72;flex-wrap:wrap}
+.exemple .lab{font-weight:800;color:#0b7480;font-size:15px;text-transform:uppercase;letter-spacing:.05em}
+.case.plein{color:#5b7a80;background:#fff}
+.tsa .comp .it,.tsa .choix .it{font-size:23px;line-height:1.75}.tsa .choix .it{margin:2px 0;line-height:1.55}
+.tsa .case{min-width:15mm;height:11mm;font-size:21px;border-width:2.5px}.tsa .case.large{min-width:24mm}
+.tsa .carte{font-size:21px;border-width:3px}.tsa .carte .leg{line-height:2.3}
+.tsa .o{font-size:24px;padding:2px 14px;border:2px solid #cfe6e8;margin:0 6px}
+.tsa .pb{font-size:19px}.tsa .ligne{min-height:11mm;font-size:19px}
+.fin{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;border-top:3px solid #0b7480;padding-top:8px;font-size:19px;font-weight:700;color:#0d5d6e}
+.fin .humeur{display:flex;gap:16px;font-size:30px}.fin .humeur span{border:2px solid #cfe6e8;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center}
+.fin .coche{display:flex;align-items:center;gap:8px}.fin .coche i{display:inline-block;width:26px;height:26px;border:3px solid #0b7480;border-radius:6px}
+body.cor .fin{visibility:hidden}
+.exemple .r{display:inline;color:#5b7a80}.exemple .rs{display:inline}.exemple .rf{fill:#c9d6d8}.exemple .o.ok{border-color:#5b7a80}
+.exemple .barre::after{content:"";position:absolute;left:18%;right:18%;top:50%;border-top:2.5px solid #5b7a80;transform:rotate(-30deg)}
+.exemple .op .cel{font-size:16px;width:6.5mm;height:6.5mm}.exemple .op .tete .cel{height:4.5mm;font-size:11px}.exemple .op .cel.petit{width:5mm;height:5mm;font-size:11px}.exemple .op .cel.case{width:6mm;height:7mm}
+.exemple.ex-case{flex-direction:column;justify-content:center;margin:0;gap:4px;text-align:center}.exemple.ex-case .op .cel{font-size:21px;width:8.6mm;height:8.6mm}.exemple.ex-case .op .tete .cel{height:5.5mm;font-size:12px}.exemple.ex-case .op .cel.petit{width:6mm;height:6mm;font-size:13px}.exemple.ex-case .op .cel.case{width:7.8mm;height:8.6mm}.exemple.ex-case svg{height:26mm}
+.exemple svg{height:20mm;width:auto;max-width:60mm}.tsa .carte .dessin svg{max-height:26mm;width:auto}.tsa .grand-dessin .carte .dessin svg{max-height:52mm}.tsa .grand-dessin .exemple.ex-case svg{height:40mm}.tsa .carte .leg{line-height:1.9}.tsa .o{min-width:13mm;text-align:center}
+@page{size:A4;margin:0}
+@media print{body{background:#fff}.outils{display:none}.feuille{box-shadow:none;margin:0;width:auto;min-height:0}}
+</style></head>
+<body><div class="outils"><a class="second" href="../../exercices/activite.html?a=tables">← Retour à l’activité</a><a class="second" href="../index.html">🧾 Toutes les feuilles</a>
+<a class="ici" href="tables-1.html">Feuille 1</a><a class="second" href="tables-2.html">Feuille 2</a>
+<button type="button" onclick="print()">🖨️ Imprimer</button><a href="pdf/tables-1.pdf" download>⬇️ PDF</a><a class="second" href="pdf/tables-1-corrige.pdf" download>⬇️ PDF du corrigé</a><button type="button" class="second" id="voirCorrige">Afficher le corrigé</button></div>
+<main class="feuille serre"><div class="entete"><span>Mathéroute · Feuille d’exercices 1</span><span class="nom">Nom : ______________________ &nbsp; Date : ____________</span><span class="tampon">✓ Corrigé</span></div>
+<h1>✖️ Les tables de multiplication</h1><p class="sous-titre">Feuille 1 · Tables de 1 à 5</p><div class="rappel">3 × 4, c’est 3 groupes de 4 : 4 + 4 + 4 = 12.</div><section class="sec"><h2><span class="num"></span>Multiplie.</h2><div class="grille g4 comp grand"><div class="it">3 × 3 = <span class="case"><span class="r">9</span></span></div><div class="it">8 × 1 = <span class="case"><span class="r">8</span></span></div><div class="it">5 × 1 = <span class="case"><span class="r">5</span></span></div><div class="it">4 × 5 = <span class="case"><span class="r">20</span></span></div><div class="it">3 × 10 = <span class="case"><span class="r">30</span></span></div><div class="it">5 × 6 = <span class="case"><span class="r">30</span></span></div><div class="it">2 × 5 = <span class="case"><span class="r">10</span></span></div><div class="it">5 × 10 = <span class="case"><span class="r">50</span></span></div><div class="it">5 × 8 = <span class="case"><span class="r">40</span></span></div><div class="it">3 × 2 = <span class="case"><span class="r">6</span></span></div><div class="it">10 × 2 = <span class="case"><span class="r">20</span></span></div><div class="it">5 × 9 = <span class="case"><span class="r">45</span></span></div><div class="it">10 × 4 = <span class="case"><span class="r">40</span></span></div><div class="it">1 × 5 = <span class="case"><span class="r">5</span></span></div><div class="it">8 × 2 = <span class="case"><span class="r">16</span></span></div><div class="it">4 × 1 = <span class="case"><span class="r">4</span></span></div><div class="it">9 × 3 = <span class="case"><span class="r">27</span></span></div><div class="it">4 × 2 = <span class="case"><span class="r">8</span></span></div><div class="it">1 × 3 = <span class="case"><span class="r">3</span></span></div><div class="it">2 × 1 = <span class="case"><span class="r">2</span></span></div><div class="it">5 × 4 = <span class="case"><span class="r">20</span></span></div><div class="it">1 × 7 = <span class="case"><span class="r">7</span></span></div><div class="it">3 × 5 = <span class="case"><span class="r">15</span></span></div><div class="it">3 × 4 = <span class="case"><span class="r">12</span></span></div><div class="it">3 × 1 = <span class="case"><span class="r">3</span></span></div><div class="it">1 × 10 = <span class="case"><span class="r">10</span></span></div><div class="it">2 × 3 = <span class="case"><span class="r">6</span></span></div><div class="it">5 × 5 = <span class="case"><span class="r">25</span></span></div><div class="it">4 × 3 = <span class="case"><span class="r">12</span></span></div><div class="it">1 × 8 = <span class="case"><span class="r">8</span></span></div><div class="it">10 × 1 = <span class="case"><span class="r">10</span></span></div><div class="it">9 × 2 = <span class="case"><span class="r">18</span></span></div><div class="it">3 × 8 = <span class="case"><span class="r">24</span></span></div><div class="it">2 × 2 = <span class="case"><span class="r">4</span></span></div><div class="it">1 × 6 = <span class="case"><span class="r">6</span></span></div><div class="it">2 × 7 = <span class="case"><span class="r">14</span></span></div><div class="it">2 × 4 = <span class="case"><span class="r">8</span></span></div><div class="it">4 × 4 = <span class="case"><span class="r">16</span></span></div><div class="it">1 × 9 = <span class="case"><span class="r">9</span></span></div><div class="it">3 × 9 = <span class="case"><span class="r">27</span></span></div></div></section><section class="sec"><h2><span class="num"></span>Trouve le nombre qui manque.</h2><div class="grille g4 comp grand"><div class="it">4 × <span class="case"><span class="r">6</span></span> = 24</div><div class="it"><span class="case"><span class="r">2</span></span> × 5 = 10</div><div class="it"><span class="case"><span class="r">4</span></span> × 3 = 12</div><div class="it">3 × <span class="case"><span class="r">3</span></span> = 9</div><div class="it">4 × <span class="case"><span class="r">3</span></span> = 12</div><div class="it"><span class="case"><span class="r">2</span></span> × 3 = 6</div><div class="it"><span class="case"><span class="r">8</span></span> × 4 = 32</div><div class="it"><span class="case"><span class="r">6</span></span> × 3 = 18</div><div class="it"><span class="case"><span class="r">9</span></span> × 5 = 45</div><div class="it">2 × <span class="case"><span class="r">8</span></span> = 16</div><div class="it"><span class="case"><span class="r">6</span></span> × 5 = 30</div><div class="it">4 × <span class="case"><span class="r">2</span></span> = 8</div></div></section>
+<p class="pied">Relis tes réponses avant de rendre ta feuille.</p></main>
+<script>
+// The answers are written in red on the sheet only when the key is shown (and then they are printed too).
+const bc=document.getElementById('voirCorrige');
+bc.onclick=()=>{const on=document.body.classList.toggle('cor');bc.textContent=on?'Cacher le corrigé':'Afficher le corrigé'};
+</script></body></html>
