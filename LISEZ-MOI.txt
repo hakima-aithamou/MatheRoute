@@ -1,0 +1,113 @@
+MATHÉROUTE — activités de mathématiques (séparées d'Horizons)
+
+À METTRE SUR GITHUB
+- Nouveau dépôt « Matheroute » (adresse : https://hakima-aithamou.github.io/Matheroute/).
+- Mettre TOUS les fichiers de ce dossier en gardant les sous-dossiers.
+
+COMPTES
+- Mêmes comptes qu'Horizons (serveur Edu-Centre) : les élèves gardent leur prénom, leur nom,
+  leur mot de passe et leurs résultats déjà faits en mathématiques.
+- Les deux sites sont sur hakima-aithamou.github.io : un élève connecté sur Horizons
+  l'est aussi sur Mathéroute (et l'inverse).
+
+CONTENU
+- index.html : toutes les activités (sens du nombre, opérations, algèbre, sens spatial, finances).
+- Les ateliers de maths et les jeux de maths (serpents, attrape, labyrinthes, ponts, coordonnées, droites)
+  sont maintenant sur Horizons. Le lien « 🎮 Jeux » du haut de la page mène à la page Jeux d'Horizons.
+- jeux/ reste ici pour 4 jeux du programme : le chemin des nombres et les frises (Algèbre),
+  les solides et les figures planes (Sens spatial).
+- À SUPPRIMER sur GitHub : ateliers.html et jeux.html. (Le dossier ateliers/ est de nouveau utilisé : voir plus bas.)
+- evaluation/calcul.html.
+- L'Île aux calculs et les Blocs de couleur sont maintenant sur Horizons.
+- À SUPPRIMER aussi sur GitHub : ile-aux-calculs.html, blocs-de-couleur.html et les dossiers blocs/, ile/ et ile-maths/.
+- feuilles/ (NOUVEAU) : 87 feuilles d'exercices à imprimer, chacune avec son corrigé :
+  · deux feuilles par activité (Feuille 1, Feuille 2) ;
+  · une « Feuille adaptée » (TSA) par activité : 3 tâches courtes, un exemple fait pour chaque tâche,
+    gros caractères et « J'ai fini ! » en bas.
+  · feuilles/index.html : la liste de toutes les feuilles (lien « 🧾 Feuilles d'exercices » dans le menu de gauche).
+  · Sur chaque activité et sur les 4 jeux du programme : liens « Feuille 1 », « Feuille 2 » et « Feuille adaptée ».
+  · Sur une feuille : Imprimer, PDF, PDF du corrigé, Afficher le corrigé (les réponses s'écrivent en rouge).
+  · feuilles/pdf/ : les PDF prêts à imprimer (format A4, une page chacun).
+  · Pour « Mesurer et comparer », imprimer en taille réelle (100 %) pour que les règles soient justes.
+- À SUPPRIMER sur GitHub : feuilles/regrouper.html (remplacée par regrouper-1 et regrouper-2), si elle y est.
+- mon-espace.html : progrès de l'élève et suivi de l'enseignante (maths seulement).
+
+PROBLÈMES EN CONTEXTE (novembre 2026)
+- Nouvelle activité « Problèmes en contexte » (exercices/activite.html?a=problemes), section « Résoudre des
+  problèmes » de l'accueil et du menu. 17 niveaux de 15 problèmes écrits, un par contenu du site :
+  additionner et soustraire jusqu'à 10 et 20, comparer, additionner et soustraire en regroupant, dizaines et
+  centaines, nombre manquant, groupes égaux (×), partager (÷), partage avec un reste, fractions, mesures,
+  le temps, l'argent, suites, défi en deux étapes. Explication de la méthode (lire, trouver les nombres,
+  choisir l'opération, calculer, vérifier) au début de chaque niveau ; le bouton 🔊 lit le problème ;
+  l'aide montre le calcul (en colonnes avec « regrouper »).
+- Comparer et ordonner : le signe (<, = ou >) choisi par l'élève se place à la place du « ? » entre les
+  deux nombres. Si la réponse est montrée, le bon signe s'y place en vert.
+
+SIGNES <, > ET = (novembre 2026)
+- Exercices « Comparer » (niveaux 1 à 3) : à la place de l'explication, une petite ligne avec les trois signes,
+  ce qu'ils veulent dire et un exemple : < plus petit que (3 < 8) · > plus grand que (8 > 3) · = égal à (5 = 5).
+- Même ligne sur les feuilles comparer-1, comparer-2, comparer-tsa, fractions-2 et situer-1 (PDF refaits).
+
+ENTRAÎNEMENT ET TABLES DE MULTIPLICATION (novembre 2026)
+- Nouvelles feuilles (feuilles/index.html, en haut : « 🏋️ Entraînement : beaucoup de calculs »), chacune avec PDF et corrigé :
+  · plus10 et plus20 : Feuille 1 = 40 additions + 12 nombres qui manquent ; Feuille 2 = 40 soustractions + 12 ;
+    feuille adaptée avec des points à compter (jusqu'à 10) ou de grandes cases (jusqu'à 20).
+  · plus50 et plus100 : 20 additions (Feuille 1) ou 20 soustractions (Feuille 2) en colonnes,
+    la moitié avec regroupement ; feuille adaptée avec un exemple.
+  · tables : Feuille 1 = tables de 1 à 5 (40 + 12), Feuille 2 = tables de 6 à 10 (40 + 12),
+    feuille adaptée = tables de 2, 5 et 10 avec des groupes à compter.
+- Nouvelle activité en ligne « Les tables de multiplication » (a=tables), 13 niveaux de 15 exercices :
+  une table à la fois (2 à 9), tables de 1 et 10, tables de 2 à 5, de 6 à 9, toutes, le nombre qui manque.
+  Tuile dans « Opérations », lien dans le menu, liens vers les feuilles.
+- Les pages des activités Calculs, Regrouper et Tables ont un lien vers les feuilles d'entraînement.
+- Les feuilles adaptées n'ont plus la série de cases à cocher en haut.
+
+JEUX VENUS DE MATHJEUX (novembre 2026)
+- 8 jeux sont passés de MathJeux à Mathéroute, rangés selon leur domaine :
+  · Algèbre : Droite cible (jeux/arcade.html?j=droite), à côté de « La droite ».
+  · Données (NOUVELLE section) : L’enquête de la classe.
+  · Sens spatial : L’atelier des formes, Le chantier des mesures, L’horaire de l’autobus,
+    La chasse au trésor, Course aux coordonnées (jeux/arcade.html?j=fusee).
+  · Littératie financière : Le magasin de la ville.
+- ateliers/ : jeu.html, atelier.js, atelier.css et ateliers/jeux/ (enquete, geoplan, chantier,
+  autobus, tresor, magasin). À METTRE sur GitHub avec ses sous-dossiers.
+- Le menu de gauche (menu-lateral.js) et Mon espace (Course aux coordonnées, Droite cible) sont à jour.
+- Les scores restent les mêmes : mêmes comptes et mêmes noms d’activités qu’avant.
+
+RANGEMENT PAR THÈMES (novembre 2026)
+- Les feuilles d’exercices sont rangées par thème, chaque dossier avec ses PDF (sous-dossier pdf/) :
+  · feuilles/nombres ............ fractions, dizaines, centaines, milliers, valeur de position, composer
+  · feuilles/comparer-classer ... égal, comparer, situer, sortes de nombres, propriétés
+  · feuilles/operations ......... calculs, compléter, regrouper, décomposer, division, partage
+  · feuilles/entrainement ....... additions et soustractions jusqu’à 10, 20, 50, 100, tables
+  · feuilles/algebre ............ chemin des nombres, frises, suites, droites
+  · feuilles/espace ............. formes, solides, figures, mesures, heure, positions, dessins
+  · feuilles/finances ........... gestion des finances
+  · feuilles/index.html ......... la liste de toutes les feuilles
+- Les vidéos sont dans exercices/videos/.
+- Fichiers allégés : son des vidéos allégé et PDF compressés. La qualité reste bonne pour la classe.
+
+METTRE LE SITE SUR GITHUB (un dossier à la fois)
+- Le site web de GitHub accepte au plus 100 fichiers par envoi : aucun dossier ne dépasse cette limite.
+- Dans le dépôt Matheroute : « Add file › Upload files », puis glisser, une fois à la fois :
+  1. les fichiers du dossier principal (index.html, style.css, …) ;
+  2. les dossiers ateliers, evaluation, exercices, images, jeux ;
+  3. chaque dossier de feuilles/ (nombres, comparer-classer, operations, …) dans le dossier feuilles du dépôt.
+  Après chaque envoi : « Commit changes ».
+- À SUPPRIMER sur GitHub : les anciennes feuilles qui étaient directement dans feuilles/
+  (ex. feuilles/calculs-1.html), le dossier feuilles/pdf/, et les vidéos .mp4 directement dans exercices/.
+
+FEUILLES ADAPTÉES (novembre 2026)
+- Les feuilles adaptées ont été retirées de Mathéroute : elles sont maintenant sur le site MathHorizon
+  (« Feuilles MathHorizon »). Mathéroute garde la Feuille 1 et la Feuille 2 de chaque activité.
+
+MISE À JOUR (17 novembre 2026)
+- Accueil : chaque activité a maintenant sa propre illustration (dossier images/math).
+- Leçons animées : les 16 leçons (« Regarder la leçon animée » dans chaque activité) sont complètes,
+  avec des dessins qui montrent ce qui est dit et la phrase écrite sous le dessin. Le vocabulaire
+  « regrouper » est utilisé pour l'addition et la soustraction en colonnes.
+- Fractions : textes courts dans les 10 niveaux (une ligne d'explication, questions courtes).
+- « Comparer les parts » (fractions, niveau 1) : apparaît après une erreur pour aider l'élève.
+- Réglages de la voix (choix de la voix et de la vitesse) : visibles seulement quand l'enseignante
+  est connectée. Le réglage est gardé sur l'appareil ; les élèves l'utilisent ensuite sans le voir.
+

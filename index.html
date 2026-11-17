@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mathématiques - Mathéroute</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="style.css"><link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<script src="compte.js" defer></script><link rel="stylesheet" href="apparence.css">
+<style>
+.math-sommaire{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.math-sommaire a{text-decoration:none;font-weight:800;font-size:16px;color:var(--mathematiques);background:#fff;border:2px solid var(--mathematiques);padding:8px 16px;border-radius:999px;transition:background .15s,color .15s}
+.math-sommaire a:hover,.math-sommaire a:focus{background:var(--mathematiques);color:#fff}
+.domaine{scroll-margin-top:90px;padding-top:6px;border-top:4px solid var(--mathematiques)}
+.domaine h2 .pastille-niveau{background:var(--mathematiques)}
+@media(max-width:560px){.math-sommaire a{font-size:14px;padding:7px 12px}}
+</style>
+<script src="menu-lateral.js" defer></script>
+<style>.illu-emo{font-size:58px;line-height:1;display:flex;align-items:center;justify-content:center;height:100%}</style>
+</head>
+<body class="cat-mathematiques theme-mathematiques">
+<header class="barre-haut">
+<a class="brand" href="index.html">Math<span>éroute</span><small>De La Salle · Ottawa</small></a>
+<button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-general">☰ Menu</button>
+<nav class="menu-general" id="menu-general" aria-label="Menu général">
+<a href="index.html">Accueil</a><a href="https://hakima-aithamou.github.io/Horizons/">Horizons ↗</a><a data-compte="eleve" href="connexion.html?role=eleve">🎒 Connexion élève</a><a data-compte="prof" href="connexion.html?role=teacher">🍎 Connexion enseignante</a></nav>
+</header>
+<script>document.currentScript.previousElementSibling.querySelector(".menu-bouton").onclick=function(){var o=this.getAttribute("aria-expanded")!=="true";this.setAttribute("aria-expanded",o);this.parentNode.classList.toggle("ouvert",o)}</script>
+<div class="mise-en-page">
+<aside class="barre-laterale">
+<p class="menu-titre">Mathématiques</p>
+<nav class="menu-activites" aria-label="Activités de mathématiques">
+<a href="index.html" style="--c:var(--mathematiques)" aria-current="page"><span class="menu-icone" aria-hidden="true">📐</span>Toutes les activités</a>
+<a href="evaluation/calcul.html" style="--c:var(--informatique)"><span class="menu-icone" aria-hidden="true">🧑‍🏫</span>Évaluation de calcul</a>
+<a href="feuilles/index.html" style="--c:var(--mathematiques)"><span class="menu-icone" aria-hidden="true">🧾</span>Feuilles d’exercices</a>
+</nav>
+</aside>
+<div class="page">
+
+
+
+<section class="entete-page math-entete">
+  <span>OBSERVER • CALCULER • SE REPÉRER</span>
+  <h1>📐 Activités de mathématiques</h1>
+  <p>Des activités concrètes pour développer des habiletés mathématiques utiles au quotidien. Chaque activité avance par niveaux, du plus facile au plus difficile.</p>
+</section>
+
+<main class="conteneur">
+<nav class="math-sommaire" aria-label="Domaines"><a href="#nombre">🔢 Sens du nombre</a><a href="#operations">➕ Opérations</a><a href="#algebre">🔁 Algèbre</a><a href="#donnees">📊 Données</a><a href="#spatial">📐 Sens spatial</a><a href="#finances">💰 Littératie financière</a><a href="#math-eval">🧑‍🏫 Évaluations</a></nav>
+<section class="jeux-niveau domaine" id="nombre" aria-labelledby="t-nombre">
+<h2 id="t-nombre"><span class="pastille-niveau">🔢 11 activités</span>Sens du nombre</h2>
+<p>Lire, écrire, composer, comparer et classer les nombres naturels.</p>
+<div class="tuiles">
+<a class="tuile" href="exercices/activite.html?a=fractions" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/fractions.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Les fractions</strong><small>Parts égales, comparer, équivalentes, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=dizaines" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/dizaines.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Les dizaines</strong><small>Compter de 10 en 10, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=centaines" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/centaines.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Les centaines</strong><small>Compter de 100 en 100, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=milliers" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/milliers.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Les milliers</strong><small>Compter de 1 000 en 1 000, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=valeur" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/valeur.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Unités, dizaines, centaines : tout ensemble</strong><small>Le récapitulatif : la valeur de chaque chiffre, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=composer" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/composer.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Composer et décomposer</strong><small>Les parties d’un nombre, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=egal" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/egal.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Un nombre, plusieurs façons</strong><small>2 + 3, c’est aussi 1 + 4. avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=comparer" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/comparaison.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Comparer et ordonner</strong><small>Plus grand, plus petit, croissant, décroissant.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=situer" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/situer.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Situer un nombre</strong><small>Entre deux nombres, dans une liste rangée.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=sortes" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/sortes.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Sortes de nombres</strong><small>Pairs, impairs, carrés, triangulaires, premiers, composés.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=proprietes" style="--c1:#0b7480;--c2:#5cc2cc;--fonce:#08565f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/proprietes.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Propriétés des nombres naturels</strong><small>Avant, après, l’ordre, 0 et 1.</small></span>
+  <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau domaine" id="operations" aria-labelledby="t-operations">
+<h2 id="t-operations"><span class="pastille-niveau">➕ 7 activités</span>Opérations</h2>
+<p>Additionner, soustraire, multiplier et partager, avec des stratégies.</p>
+<div class="tuiles">
+<a class="tuile" href="exercices/activite.html?a=calculs" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/operations.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Calculs arithmétiques</strong><small>Additionner, soustraire, multiplier.</small></span>
+  <span class="tuile-pied"><b>11 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=tables" style="--c1:#7a4fb5;--c2:#c3a8e8;--fonce:#53317f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/tables.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Les tables de multiplication</strong><small>Les tables de 1 à 10, une à la fois, puis mélangées.</small></span>
+  <span class="tuile-pied"><b>13 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=completer" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/completer.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Compléter des additions et des soustractions</strong><small>Le nombre ou le chiffre qui manque, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>9 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=regrouper" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/regrouper.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Additionner et soustraire en regroupant</strong><small>Calculer en colonnes, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>9 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=decomposer" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e"> <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/decomposer.svg" alt=""></span> <span class="tuile-texte"><strong>Additionner et soustraire en décomposant</strong><small>Dizaines avec dizaines, unités avec unités, en colonnes avec la barre.</small></span> <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span> </a>
+<a class="tuile" href="exercices/activite.html?a=division" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/division.svg" alt=""></span>
+  <span class="tuile-texte"><strong>La division</strong><small>Partager, faire des groupes, le reste, avec une capsule animée.</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=partage" style="--c1:#137f95;--c2:#6cc4d6;--fonce:#0d5d6e">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/partage.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Partager équitablement</strong><small>Partager en parts égales.</small></span>
+  <span class="tuile-pied"><b>4 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau domaine" id="algebre" aria-labelledby="t-algebre">
+<h2 id="t-algebre"><span class="pastille-niveau">🔁 5 activités</span>Algèbre : suites et relations</h2>
+<p>Trouver une régularité, la prolonger et la représenter.</p>
+<div class="tuiles">
+<a class="tuile" href="jeux/arcade.html?j=chemin" style="--c1:#d0762b;--c2:#f6c9a2;--fonce:#9c5317">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/chemin.svg" alt=""></span>
+  <span class="tuile-texte"><span class="niv-badge niv-d">🟢 Débutant</span><strong>Le chemin des nombres</strong><small>Aller du départ au drapeau en suivant la suite : de 1 en 1, de 2 en 2, de 5 en 5…</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="jeux/arcade.html?j=frises" style="--c1:#c2633a;--c2:#f2b89c;--fonce:#a24e2a">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/frises.svg" alt=""></span>
+  <span class="tuile-texte"><span class="niv-badge niv-d">🟢 Débutant</span><strong>Suites et frises</strong><small>Compléter des suites de nombres, des frises et des dallages d’images.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=suites" style="--c1:#1a6f7d;--c2:#7fbfca;--fonce:#12525c">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/suite.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Compléter une suite</strong><small>Trouver le nombre suivant.</small></span>
+  <span class="tuile-pied"><b>5 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=droites" style="--c1:#1a6f7d;--c2:#7fbfca;--fonce:#12525c">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/droites.svg" alt=""></span>
+  <span class="tuile-texte"><strong>La droite · niveau avancé</strong><small>Règle, table de valeurs et tracé d’une droite.</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="jeux/arcade.html?j=droite" style="--c1:#1a6f7d;--c2:#7fbfca;--fonce:#12525c">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/droite-cible.svg" alt=""></span>
+  <span class="tuile-texte"><span class="niv-badge niv-a">🔴 Avancé</span><strong>Droite cible</strong><small>Régler a et b dans y = ax + b pour toucher toutes les étoiles.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau domaine" id="donnees" aria-labelledby="t-donnees">
+<h2 id="t-donnees"><span class="pastille-niveau">📊 1 activité</span>Données</h2>
+<p>Recueillir, classer et lire des données.</p>
+<div class="tuiles">
+<a class="tuile" href="ateliers/jeu.html?j=enquete" style="--c1:#1f6f9e;--c2:#86c1e0;--fonce:#155175">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/donnees.svg" alt=""></span>
+  <span class="tuile-texte"><strong>L’enquête de la classe</strong><small>Marques de pointage, pictogrammes et diagrammes à bandes.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau domaine" id="spatial" aria-labelledby="t-spatial">
+<h2 id="t-spatial"><span class="pastille-niveau">📐 12 activités</span>Sens spatial : formes, mesure et repérage</h2>
+<p>Les formes, les longueurs, l’heure et les positions sur un plan.</p>
+<div class="tuiles">
+<a class="tuile" href="exercices/activite.html?a=formes" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/figures.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Identifier les formes</strong><small>Reconnaître et nommer les formes.</small></span>
+  <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="jeux/arcade.html?j=solides" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d"> <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/solides.svg" alt=""></span> <span class="tuile-texte"><strong>Les solides</strong><small>Nom, objets, roule ou glisse, faces, sommets, arêtes.</small></span> <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span> </a>
+<a class="tuile" href="jeux/arcade.html?j=figures" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d"> <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/symetrie.svg" alt=""></span> <span class="tuile-texte"><strong>Figures planes et symétrie</strong><small>Nommer les figures, côtés, lignes, dessins en figures, axes de symétrie.</small></span> <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span> </a>
+<a class="tuile" href="ateliers/jeu.html?j=geoplan" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/geoplan.svg" alt=""></span>
+  <span class="tuile-texte"><strong>L’atelier des formes</strong><small>Géoplan, côtés et sommets, symétrie, reproduction et translation.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=mesures" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/mesure.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Mesurer et comparer</strong><small>Comparer des longueurs.</small></span>
+  <span class="tuile-pied"><b>5 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="ateliers/jeu.html?j=chantier" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/chantier.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Le chantier des mesures</strong><small>Mesurer avec une règle, calculer le périmètre et l’aire, construire des rectangles.</small></span>
+  <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=heure" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/horloge.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Savoir lire l'heure</strong><small>Lire l’heure sur une horloge.</small></span>
+  <span class="tuile-pied"><b>5 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="ateliers/jeu.html?j=autobus" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/autobus.svg" alt=""></span>
+  <span class="tuile-texte"><strong>L’horaire de l’autobus</strong><small>Lire l’heure, régler l’horloge, calculer une durée, lire un horaire.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=trajets" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/plan.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Lire des positions sur un plan</strong><small>Du quadrillage au plan cartésien, avec les nombres négatifs.</small></span>
+  <span class="tuile-pied"><b>14 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="ateliers/jeu.html?j=tresor" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/tresor.svg" alt=""></span>
+  <span class="tuile-texte"><strong>La chasse au trésor</strong><small>Trouver une case sur un plan, suivre des déplacements, placer des coordonnées (x, y).</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="jeux/arcade.html?j=fusee" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/fusee.svg" alt=""></span>
+  <span class="tuile-texte"><span class="niv-badge niv-i">🟡 Intermédiaire</span><strong>Course aux coordonnées</strong><small>Piloter une fusée jusqu’au point (x, y) demandé.</small></span>
+  <span class="tuile-pied"><b>8 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="exercices/activite.html?a=dessins" style="--c1:#0d8a7e;--c2:#69cfc2;--fonce:#08665d">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/dessins.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Dessiner sur un plan</strong><small>Lire les points d’un dessin et remplir la table de valeurs.</small></span>
+  <span class="tuile-pied"><b>10 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau domaine" id="finances" aria-labelledby="t-finances">
+<h2 id="t-finances"><span class="pastille-niveau">💰 2 activités</span>Littératie financière</h2>
+<p>L’argent : acheter, payer et rendre la monnaie.</p>
+<div class="tuiles">
+<a class="tuile" href="exercices/activite.html?a=finances" style="--c1:#2f7f86;--c2:#94cbd0;--fonce:#215e63">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/finances.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Gestion des finances</strong><small>Acheter, payer, rendre la monnaie.</small></span>
+  <span class="tuile-pied"><b>6 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="tuile" href="ateliers/jeu.html?j=magasin" style="--c1:#2f7f86;--c2:#94cbd0;--fonce:#215e63">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/magasin.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Le magasin de la ville</strong><small>Payer avec l’argent canadien, rendre la monnaie, respecter un budget.</small></span>
+  <span class="tuile-pied"><b>7 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+
+
+<section class="jeux-niveau domaine" id="problemes" aria-labelledby="t-problemes">
+<h2 id="t-problemes"><span class="pastille-niveau">🧩 1 activité</span>Résoudre des problèmes</h2>
+<p>Les maths dans la vie : des problèmes écrits avec une mise en contexte, pour chaque contenu du site.</p>
+<div class="tuiles">
+<a class="tuile" href="exercices/activite.html?a=problemes" style="--c1:#7a4fb5;--c2:#c3a8e8;--fonce:#53317f">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/problemes.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Problèmes en contexte</strong><small>Lire, choisir l’opération, calculer, vérifier.</small></span>
+  <span class="tuile-pied"><b>17 niveaux</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+<section class="jeux-niveau" aria-labelledby="math-eval" style="margin-top:28px">
+<h2 id="math-eval"><span class="pastille-niveau">Enseignante</span>Évaluations adaptées</h2>
+<p>Évaluations à faire passer à un élève, une question à la fois, avec un plan visuel et des pauses (adaptées aux élèves TSA). Un rapport imprimable est produit à la fin.</p>
+<div class="tuiles">
+<a class="tuile" href="evaluation/calcul.html" style="--c1:#3f7a64;--c2:#7fb59e;--fonce:#284a40">
+  <span class="tuile-illu" aria-hidden="true"><img class="mr-art" src="images/math/evaluation.svg" alt=""></span>
+  <span class="tuile-texte"><strong>Évaluation de calcul</strong><small>+ − × ÷ : de 1 à 10 jusqu’à 100, au choix. Rapport à imprimer.</small></span>
+  <span class="tuile-pied"><b>8 parties</b><span>Commencer <span aria-hidden="true">→</span></span></span>
+</a>
+</div>
+</section>
+
+
+</main>
+
+<div class="retour"><a href="index.html">← Retour à l'accueil</a></div>
+<footer class="site-footer"><span>Mathéroute <b>│</b> De La Salle · Ottawa</span><span>Apprendre aujourd’hui pour demain</span></footer>
+<script src="script.js"></script>
+
+</div>
+</div>
+</body>
+</html>
