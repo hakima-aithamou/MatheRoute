@@ -92,13 +92,36 @@ function vueEnseignante() {
   el('titre').textContent = 'Espace enseignante';
   const box = el('contenu'); vider(box);
   const tabs = node('div', 'onglets'); tabs.setAttribute('role', 'tablist');
-  [['gestion', '👥 Élèves et classes'], ['suivi', '📊 Suivi des résultats']].forEach(([id, t]) => {
+  [['gestion', '👥 Élèves et classes'], ['suivi', '📊 Suivi des résultats'], ['compte', '🔑 Mon compte']].forEach(([id, t]) => {
     const b = bouton(null, t, () => { onglet = id; dire(''); vueEnseignante(); });
     b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(onglet === id)); tabs.append(b);
   });
   box.append(tabs);
   const panneau = node('div', 'panneau'); box.append(panneau);
-  if (onglet === 'gestion') gestion(panneau); else suivi(panneau);
+  if (onglet === 'gestion') gestion(panneau); else if (onglet === 'compte') monCompte(panneau); else suivi(panneau);
+}
+
+/* ---------- "My account" tab: the teacher changes her own password ---------- */
+function monCompte(p) {
+  const sec = node('section', 'bloc'); sec.append(node('h2', null, 'Mon compte'));
+  const s = (() => { try { return JSON.parse(localStorage.getItem('ec-session') || 'null'); } catch { return null; } })();
+  sec.append(node('p', null, 'Courriel : ' + (s && s.user && s.user.email || '')));
+  sec.append(node('p', 'petit', 'Ce compte est le même sur tous tes sites (MathHorizon, Mathéroute, Puzzles…). Un nouveau mot de passe sert donc partout.'));
+  sec.append(node('h3', null, 'Changer mon mot de passe'));
+  const f = node('form', 'mini-form colonne');
+  const champ = (txt, name) => { const l = node('label', null, txt); const i = node('input'); i.type = 'password'; i.name = name; i.minLength = 8; i.required = true; i.autocomplete = 'new-password'; l.append(i); f.append(l); return i; };
+  const a = champ('Nouveau mot de passe (8 caractères ou plus)', 'nouveau'), b = champ('Écris-le une deuxième fois', 'confirmation');
+  const voir = node('label', null); voir.style.cssText = 'display:flex;align-items:center;gap:8px;font-weight:400'; const cb = node('input'); cb.type = 'checkbox'; cb.onchange = () => { a.type = b.type = cb.checked ? 'text' : 'password'; }; voir.append(cb, document.createTextNode(' Afficher les mots de passe')); f.append(voir);
+  const ok = node('button', 'principal', 'Changer mon mot de passe'); f.append(ok);
+  f.onsubmit = async e => {
+    e.preventDefault();
+    if (a.value !== b.value) { dire('Les deux mots de passe ne sont pas pareils.'); return; }
+    ok.disabled = true; dire('Changement en cours…', true);
+    try { await EC.changerMotDePasse(a.value); f.reset(); a.type = b.type = 'password'; dire('✓ Ton mot de passe est changé. Utilise-le la prochaine fois que tu te connectes.', true); }
+    catch (err) { dire(err.message); }
+    finally { ok.disabled = false; }
+  };
+  sec.append(f); p.append(sec);
 }
 
 /* ---------- "Students and classes" tab ---------- */

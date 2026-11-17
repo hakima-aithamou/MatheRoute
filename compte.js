@@ -62,6 +62,30 @@ async function request(path, body, token, tries = 3) {
   return d;
 }
 
+/* Maths results go to their own small server function ("ec-resultats-maths"), which knows all the
+   Mathéroute, MathHorizon and everyday-maths activities. POST first, then GET with the x-ec header
+   when the school network blocks POST. */
+async function envoyerResultat(r) {
+  let s = store.get('ec-session');
+  if (!s) throw Error('Connecte-toi pour continuer.');
+  if (s.expires_at * 1000 < Date.now() + 60000) { /* refresh an old session first, like EC.api */
+    try { s = await request('/auth/v1/token?grant_type=refresh_token', { refresh_token: s.refresh_token }); store.set('ec-session', s); }
+    catch (e) { if (e.message === NET_MSG) throw e; EC.oublier(); throw Error('Ta session a expiré. Reconnecte-toi.'); }
+  }
+  const token = s.access_token;
+  const path = '/functions/v1/ec-resultats-maths';
+  let rep = null;
+  if (!modeGet.get()) { try { rep = await send(path, r, token); } catch (e) {} }
+  if (!rep) {
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 15000);
+    try { rep = await fetch(URL_SB + path, { method: 'GET', cache: 'no-store', signal: ctl.signal, headers: { apikey: KEY, 'x-ec': enBase64(r), ...(token ? { Authorization: 'Bearer ' + token } : {}) } }); }
+    catch (e) { throw Error(NET_MSG); } finally { clearTimeout(timer); }
+  }
+  let d = {}; try { d = await rep.json(); } catch {}
+  if (rep.status === 401) EC.oublier();
+  if (!rep.ok) throw Error(d.error || 'Le résultat n’a pas été enregistré.');
+  return d;
+}
 const EC = {
   base: BASE,
   session() { return store.get('ec-session'); },
@@ -92,6 +116,30 @@ const EC = {
     store.set('ec-session', s);
     return EC.chargerProfil();
   },
+  /* The signed-in user changes their own password (Supabase Auth, PUT /auth/v1/user). */
+  async changerMotDePasse(password) {
+    if (!password || password.length < 8) throw Error('Le mot de passe doit avoir 8 caractères ou plus.');
+    let s = store.get('ec-session');
+    if (!s) throw Error('Connecte-toi pour continuer.');
+    if (s.expires_at * 1000 < Date.now() + 60000) {
+      try { s = await request('/auth/v1/token?grant_type=refresh_token', { refresh_token: s.refresh_token }); store.set('ec-session', s); }
+      catch (e) { if (e.message === NET_MSG) throw e; EC.oublier(); throw Error('Ta session a expiré. Reconnecte-toi.'); }
+    }
+    let r;
+    for (let i = 0; i < 2 && !r; i++) {
+      const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 15000);
+      try { r = await fetch(URL_SB + '/auth/v1/user', { method: 'PUT', cache: 'no-store', signal: ctl.signal, body: JSON.stringify({ password }), headers: { apikey: KEY, 'Content-Type': 'application/json', Authorization: 'Bearer ' + s.access_token } }); }
+      catch (e) { if (i === 0) await sleep(700); }
+      finally { clearTimeout(timer); }
+    }
+    if (!r) throw Error(NET_MSG);
+    let d = {}; try { d = await r.json(); } catch {}
+    if (r.ok) return true;
+    if (d.error_code === 'same_password') throw Error('Ce mot de passe est déjà le tien. Choisis-en un autre.');
+    if (d.error_code === 'weak_password') throw Error('Ce mot de passe est trop simple. Choisis-en un plus long ou plus varié.');
+    if (r.status === 401) { EC.oublier(); throw Error('Ta session a expiré. Reconnecte-toi.'); }
+    throw Error(d.msg || d.error_description || 'Le mot de passe n’a pas été changé. Réessaie.');
+  },
   async chargerProfil() {
     const d = await EC.api({ action: 'math_dashboard' });
     const p = d.role === 'teacher' ? { role: 'teacher', nom: 'Mme Hakima' } : { role: 'student', nom: d.student.first_name, classes: (d.classes || []).map(c => c.name) };
@@ -111,7 +159,7 @@ const EC = {
     const p = store.get('ec-profil');
     if (!store.get('ec-session')) return { ok: false, raison: 'invite' };
     if (p && p.role === 'teacher') return { ok: false, raison: 'enseignante' };
-    try { await EC.api({ action: 'save_math_result', ...r }); return { ok: true }; }
+    try { await envoyerResultat(r); return { ok: true }; }
     catch (e) { return { ok: false, raison: 'erreur', message: e.message }; }
   },
   /* Results of the signed-in student (to show ✓ on the levels). */
