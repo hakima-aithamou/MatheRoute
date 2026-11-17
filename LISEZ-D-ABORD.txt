@@ -1,0 +1,31 @@
+MATHÉROUTE — MISE EN LIGNE SUR GITHUB EN 7 LOTS (17 novembre 2026)
+
+Le site web de GitHub accepte au plus 100 fichiers par envoi. Mathéroute contient 300 fichiers :
+il est découpé en 7 lots, rangés par thème. La structure des dossiers est la même que dans le site complet.
+
+AVANT D'ENVOYER (une seule fois)
+Les anciennes vidéos ne sont plus utilisées : les leçons animées les remplacent.
+GitHub ne supprime pas tout seul les fichiers qui ne sont plus dans le site. Pour les enlever :
+1. Dans ton dépôt Mathéroute, ouvre le dossier exercices, puis le dossier videos.
+2. Clique sur « ... » (en haut à droite) → « Delete directory », puis « Commit changes ».
+(Si le dossier videos n'existe plus dans ton dépôt, passe à la suite.)
+
+POUR CHAQUE LOT, DANS L'ORDRE (lot 1, puis 2, 3, 4, 5, 6, 7) :
+1. Sur GitHub, ouvre ton dépôt Mathéroute, puis clique sur « Add file » → « Upload files ».
+2. Ouvre le dossier du lot sur ton ordinateur.
+3. Sélectionne TOUT ce qu'il y a DANS ce dossier (Ctrl + A), pas le dossier du lot lui-même.
+4. Glisse la sélection dans la page GitHub. Les sous-dossiers sont gardés.
+5. Attends la fin du chargement, puis clique sur « Commit changes ».
+Utilise Chrome ou Edge pour glisser des dossiers. GitHub remplace les fichiers qui ont le même nom.
+
+CONTENU DES LOTS
+- lot-1-site (43 fichiers)
+- lot-2-feuilles-algebre-comparer (54 fichiers)
+- lot-3-feuilles-entrainement-finances (36 fichiers)
+- lot-4-feuilles-espace (42 fichiers)
+- lot-5-feuilles-nombres (36 fichiers)
+- lot-6-feuilles-operations (36 fichiers)
+- lot-7-illustrations (53 fichiers)
+  lot 1 : accueil, menus, comptes, exercices et leçons animées, ateliers, jeux, évaluation, feuilles/index.html
+  lots 2 à 6 : les feuilles à imprimer par thème, avec leurs PDF et corrigés
+  lot 7 : les illustrations de l'accueil (images/math)
