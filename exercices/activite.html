@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercices de mathématiques · Mathéroute</title>
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="exercices.css">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<script src="../compte.js" defer></script>
+<script src="niveaux.js" defer></script>
+<script src="lecon-animee.js" defer></script><script src="moteur.js" defer></script><script src="voix.js" defer></script>
+<link rel="stylesheet" href="../apparence.css">
+<style>.feuilles-lien{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-6px 0 16px;font-weight:700}.feuilles-lien a{border:2px solid #0b7480;color:#0b7480;background:#fff;border-radius:10px;padding:6px 12px;text-decoration:none}.feuilles-lien a:hover{background:#e1f3f4}.feuilles-lien a.adaptee{border-color:#7a4fc4;color:#7a4fc4}</style>
+</head>
+<body class="cat-mathematiques">
+<header class="ex-header">
+  <a class="brand" href="../index.html">Math<span>éroute</span></a>
+  <nav aria-label="Navigation"><a href="../index.html">← Mathématiques</a><a data-compte="eleve" href="../connexion.html?role=eleve">🎒 Connexion élève</a><a data-compte="prof" href="../connexion.html?role=teacher">🍎 Connexion enseignante</a></nav>
+</header>
+
+<main>
+  <!-- 1. Level choice -->
+  <section id="menu" hidden>
+    <a class="bouton-retour" href="../index.html"><span aria-hidden="true">⬅</span> Retour aux activités de mathématiques</a>
+    <h1 id="menuTitre"></h1>
+    <p class="sous-titre">Choisis ton niveau. Chaque niveau contient jusqu’à 15 exercices, du plus facile au plus difficile.</p>
+    <p id="feuillesLien" class="feuilles-lien" hidden></p>
+    <p id="invite" class="bandeau-invite" hidden>Tu n’es pas connecté : tu peux jouer, mais ton score ne sera pas gardé. <a id="lienConnexion" href="../connexion.html">Me connecter</a></p>
+    <details id="video" class="video-box" hidden><summary>▶ Regarder la vidéo explicative</summary><video controls playsinline preload="metadata"></video></details>
+    <ol id="niveaux" class="niveaux"></ol>
+  </section>
+
+  <!-- 2. A level in progress -->
+  <section id="jeu" hidden>
+    <div class="jeu-haut">
+      <button type="button" id="quitter" class="bouton-retour"><span aria-hidden="true">⬅</span> Retour aux niveaux</button>
+      <ol id="progres" class="progres" aria-label="Progression dans le niveau"></ol>
+    </div>
+    <div class="carte-exercice">
+      <div class="exercice-tete">
+        <h1 id="jeuTitre"></h1>
+        <span id="compteur" class="compteur"></span>
+      </div>
+      <div class="consigne-ligne"><p id="consigne"></p><button type="button" id="ecouter" class="ecouter" aria-label="Écouter la consigne" title="Écouter la consigne">🔊</button></div>
+      <div id="visuel" class="visuel"></div>
+      <form id="formulaire" autocomplete="off">
+        <div id="champ" class="champ"></div>
+        <div class="actions">
+          <button type="submit" id="verifier" class="bouton-principal">Vérifier</button>
+          <button type="button" id="suivant" class="bouton-suivant" hidden>Suivant →</button>
+        </div>
+      </form>
+      <p id="retour" class="retour-msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<!-- 3. End-of-level summary -->
+<div id="bilan" class="bilan-fond" hidden>
+  <div class="bilan" role="dialog" aria-modal="true" aria-labelledby="bilanTitre">
+    <div class="bilan-fete" aria-hidden="true">🎉</div>
+    <h2 id="bilanTitre" tabindex="-1">Bravo, tu as terminé le niveau !</h2>
+    <p id="bilanNiveau" class="bilan-niveau"></p>
+    <div class="bilan-etoiles" id="bilanEtoiles" aria-hidden="true"></div>
+    <div class="bilan-chiffres">
+      <div><span>Score</span><strong id="bilanScore"></strong><small id="bilanScoreTexte">réussis du premier coup</small></div>
+      <div><span>Temps</span><strong id="bilanTemps"></strong><small>pour faire le niveau</small></div>
+    </div>
+    <p id="bilanMessage" class="bilan-message"></p>
+    <p id="bilanSauvegarde" class="bilan-sauvegarde" role="status" aria-live="polite"></p>
+    <div class="bilan-boutons">
+      <button type="button" id="bilanSuivant" class="bouton-principal">Niveau suivant →</button>
+      <button type="button" id="bilanRefaire" class="bouton-doux">Refaire ce niveau</button>
+      <button type="button" id="bilanMenu" class="bouton-doux">Choisir un niveau</button>
+    </div>
+  </div>
+</div>
+<footer class="ex-footer">Mathéroute · Chaque progrès est une réussite.</footer>
+<script>
+// Links to the two printable sheets of the current activity.
+/* each activity's worksheets are in a theme folder */
+var DOSSIER_FEUILLE={"calculs":"operations","centaines":"nombres","chemin":"algebre","comparer":"comparer-classer","completer":"operations","composer":"nombres","decomposer":"operations","dessins":"espace","division":"operations","dizaines":"nombres","droites":"algebre","egal":"comparer-classer","figures":"espace","finances":"finances","formes":"espace","fractions":"nombres","frises":"algebre","heure":"espace","mesures":"espace","milliers":"nombres","partage":"operations","plus10":"entrainement","plus100":"entrainement","plus20":"entrainement","plus50":"entrainement","proprietes":"comparer-classer","regrouper":"operations","situer":"comparer-classer","solides":"espace","sortes":"comparer-classer","suites":"algebre","tables":"entrainement","trajets":"espace","valeur":"nombres"};
+(function(){var ok=['calculs', 'centaines', 'comparer', 'completer', 'composer', 'decomposer', 'dessins', 'division', 'dizaines', 'droites', 'egal', 'finances', 'formes', 'fractions', 'heure', 'mesures', 'milliers', 'partage', 'proprietes', 'regrouper', 'situer', 'sortes', 'suites', 'trajets', 'valeur', 'tables'],p=document.getElementById("feuillesLien");
+function maj(){var id=new URLSearchParams(location.search).get("a");if(ok.indexOf(id)<0){p.hidden=true;return}p.hidden=false;
+p.innerHTML='🧾 Feuilles à imprimer : <a href="../feuilles/'+(DOSSIER_FEUILLE[id]||'')+'/'+id+'-1.html">Feuille 1</a><a href="../feuilles/'+(DOSSIER_FEUILLE[id]||'')+'/'+id+'-2.html">Feuille 2</a>'+(['calculs','regrouper','tables'].indexOf(id)>=0?'<a href="../feuilles/index.html#entrainement">🏋️ Entraînement : beaucoup de calculs</a>':'')}
+maj();})();
+</script>
+</body>
+</html>
